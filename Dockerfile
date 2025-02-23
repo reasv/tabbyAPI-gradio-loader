@@ -25,4 +25,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 7860
 
 # Define the entrypoint
-CMD ["python", "main.py"]
+ENTRYPOINT ["/bin/sh", "-c", "python webui.py --listen --endpoint_url \"$TABBY_API_URL\" --admin_key \"$TABBY_ADMIN_KEY\""]
